@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-cyber-900 text-gray-300 font-sans tracking-wide;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-white;
+  }
+}
+
+@layer components {
+  .cyber-card {
+    @apply bg-cyber-800 border-cyber-600 border rounded-lg shadow-[0_0_15px_rgba(0,0,0,0.5)] overflow-hidden transition-all duration-300;
+  }
+  
+  .cyber-input {
+    @apply w-full bg-cyber-900 border border-cyber-600 rounded px-4 py-2 text-white focus:outline-none focus:border-cyber-primary focus:ring-1 focus:ring-cyber-primary transition-all duration-300 font-mono text-sm;
+  }
+  
+  .cyber-btn-primary {
+    @apply bg-transparent border border-cyber-primary text-cyber-primary px-6 py-2 rounded font-mono font-bold uppercase tracking-wider relative overflow-hidden transition-all duration-300 hover:bg-cyber-primary hover:text-cyber-900 hover:shadow-[0_0_15px_#00F0FF];
+  }
+
+  .cyber-btn-secondary {
+    @apply bg-cyber-800 border-cyber-600 border text-gray-300 px-6 py-2 rounded font-mono font-bold tracking-wider hover:bg-cyber-700 transition-all duration-300;
+  }
+  
+  .cyber-btn-danger {
+    @apply bg-transparent border border-cyber-danger text-cyber-danger px-6 py-2 rounded font-mono font-bold uppercase tracking-wider hover:bg-cyber-danger hover:text-white hover:shadow-[0_0_15px_#FF003C] transition-all duration-300;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #060B14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #141F32;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1B2943;
+}
+
+/* Grid animation */
+.bg-grid-anim {
+  background-size: 50px 50px;
+  animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(50px); }
+}
+
+/* Pulse glow animation */
+.glow-pulse {
+  animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+  }
+  50% {
+    opacity: .5;
+    box-shadow: 0 0 2px rgba(0, 240, 255, 0.1);
+  }
+}
